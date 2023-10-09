@@ -1,6 +1,7 @@
 
 
 import Calculator.Calculator;
+import Shop.*;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,12 +14,12 @@ import static org.assertj.core.api.Assertions.*; // Импортируем кл�
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            double t = Calculator.calculatingDiscount(0, 2);
-        }
-        catch (AssertionError e) {
-            throw new ArithmeticException(": " + e);
-        }
+//        try {
+//            double t = Calculator.calculatingDiscount(0, 2);
+//        }
+//        catch (AssertionError e) {
+//            throw new ArithmeticException(": " + e);
+//        }
         // Проверьте, как работают методы:
 
         // assertConditionA();
@@ -50,6 +51,22 @@ public class Main {
         //  testingJavaCollectionsAssertJ(colors);
 
         //  checkingHero();
+        List poductList = new ArrayList();
+        Product milk = new Product(10,"Milk");
+        Product bread = new Product(5,"Bread");
+        Product honey = new Product(20,"Honey");
+        poductList.add(milk);
+        poductList.add(bread);
+        poductList.add(honey);
+        Shop shop = new Shop();
+        shop.setProducts(poductList);
+        System.out.println(shop.getMostExpensiveProduct().toString());
+        List sortedPoductList = shop.sortProductsByPrice();
+        for (Object i: sortedPoductList) {
+            System.out.println(i.toString());
+        }
+        ShopTest sh = new ShopTest(shop);
+        sh.startShopTest();
     }
 
     //                  Практические задания:

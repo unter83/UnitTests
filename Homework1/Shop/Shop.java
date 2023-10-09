@@ -1,5 +1,7 @@
-package Homework1.Shop;
+package Shop;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -17,14 +19,14 @@ public class Shop {
 
     // Метод должен вернуть отсортированный по возрастанию по цене список продуктов
     public List<Product> sortProductsByPrice() {
-        // Допишите реализацию метода самостоятельно
-        return null;
+        List<Product> sortedProducts = products;
+        Collections.sort(sortedProducts);
+        return sortedProducts;
     }
 
     // Метод должен вернуть самый дорогой продукт
     public Product getMostExpensiveProduct() {
-        // Допишите реализацию метода самостоятельно
-        return null;
+        return Collections.max(products);
     }
 
 }
