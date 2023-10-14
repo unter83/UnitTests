@@ -6,7 +6,7 @@ import repository.Motorcycle;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class tast1Test {
+public class VehicleTest {
 
     Car car;
     Motorcycle motorcycle;

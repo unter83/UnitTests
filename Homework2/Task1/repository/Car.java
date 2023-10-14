@@ -1,4 +1,4 @@
-package Task1;
+package repository;
 public class Car extends Vehicle {
     private String company;
     private String model;

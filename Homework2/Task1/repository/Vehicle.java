@@ -1,4 +1,4 @@
-package Task1;
+package repository;
 public abstract class Vehicle {
     private String company;
     private String model;

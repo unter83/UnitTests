@@ -1,5 +1,14 @@
-package Task1;
+package main;
+
+import repository.Car;
+import repository.Vehicle;
+
 public class Main {
+
+    public static void main(String[] args) {
+        Car car = new Car("Niva", "2023", 2005);
+        System.out.println(car instanceof Vehicle);
+    }
 
     /*
      Домашнее задание к семинару №2 JUnit:
