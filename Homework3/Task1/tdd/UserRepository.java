@@ -13,7 +13,7 @@ public class UserRepository {
     }
 
     public void addUser(User user) {
-        if (!data.contains(user)) {
+        if (!data.contains(user) || user.isAuthenticate) {
             data.add(user);
         }
     }
