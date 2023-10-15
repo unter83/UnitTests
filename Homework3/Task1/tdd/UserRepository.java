@@ -6,19 +6,25 @@ import java.util.List;
 public class UserRepository {
 
     // Тут можно хранить аутентифицированных пользователей
-    List<User> data = new ArrayList<>();
+    List<User> data;
 
-    public void addUser(User user) {
-       //..
+    public UserRepository() {
+        this.data = new ArrayList<>();
     }
 
-    public boolean findByName(String username) {
+    public void addUser(User user) {
+        if (!data.contains(user)) {
+            data.add(user);
+        }
+    }
+
+    public User findByName(String username) {
         for (User user : data) {
             if (user.name.equals(username)) {
-                return true;
+                return user;
             }
         }
-        return false;
+        return null;
     }
 
 }
