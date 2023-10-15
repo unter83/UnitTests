@@ -18,6 +18,7 @@ public class UserRepository {
         }
     }
 
+
     public User findByName(String username) {
         for (User user : data) {
             if (user.name.equals(username)) {
@@ -25,6 +26,14 @@ public class UserRepository {
             }
         }
         return null;
+    }
+
+    public void unLogin() {
+        for (User user: data) {
+            if (user.isAuthenticate && !user.isAdmin) {
+                user.isAuthenticate = false;
+            }
+        }
     }
 
 }

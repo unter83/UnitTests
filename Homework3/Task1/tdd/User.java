@@ -5,17 +5,35 @@ public class User {
     String name;
     String password;
     boolean isAdmin = false;
+
     boolean isAuthenticate = false;
+    public boolean getIsAdmin() {
+        return isAdmin;
+    }
+
+
+
+    public boolean getIsAuthenticate() {
+        return isAuthenticate;
+    }
+
+
 
     public User(String name, String password) {
-        this.name = name;
-        this.password = password;
+        if (authenticate(name, password)) {
+            this.name = name;
+            this.password = password;
+        } else
+            throw new RuntimeException("Login Error");
     }
 
     public User(String name, String password, boolean isAdmin) {
-        this.name = name;
-        this.password = password;
-        this.isAdmin = isAdmin;
+        if (authenticate(name, password)) {
+            this.name = name;
+            this.password = password;
+            this.isAdmin = isAdmin;
+        } else
+            throw new RuntimeException("Login Error");
     }
 
     //3.6.
@@ -29,7 +47,7 @@ public class User {
                 name.contains(".") |
                 name.contains("%") |
                 name.contains("/") )
-                    return false;
+            return false;
         if (password.length() > 5) {
             isAuthenticate = true;
             return true;
@@ -37,4 +55,13 @@ public class User {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", isAdmin=" + isAdmin +
+                ", isAuthenticate=" + isAuthenticate +
+                '}';
+    }
 }

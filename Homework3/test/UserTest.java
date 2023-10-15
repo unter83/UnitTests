@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class UserTest {
 
     UserRepository repository = new UserRepository();
-    User user = new User("Anton", "123");
+    User user = new User("Anton", "1234567");
 
     @BeforeEach
     void setUp () {
@@ -38,6 +38,18 @@ public class UserTest {
     @Test
     void authenticateInvalidTesting() {
         assertFalse(user.authenticate("%", "123456"));
+    }
+    @Test
+    void unLoginTesting() {
+        User user1 = new User("Ben", "qwerty");
+        User user2 = new User("Admin", "root123", true);
+        repository.addUser(user1);
+        repository.addUser(user2);
+        repository.unLogin();
+        assertFalse(user.getIsAuthenticate());
+        assertFalse(user1.getIsAuthenticate());
+        assertTrue(user2.getIsAuthenticate());
+
     }
 
 }
