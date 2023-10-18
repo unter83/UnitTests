@@ -14,6 +14,5 @@ public class HttpClientTest {
         when(webServiceMock.localhost()).thenReturn("Hello! This is localhost");
         assertThat(httpClient.get("127.0.0.1")).isEqualTo("Hello! This is localhost");
         verify(webServiceMock, times(1)).localhost();
-
     }
 }
