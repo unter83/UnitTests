@@ -30,9 +30,7 @@ public class ConsoleInterface {
             case 0 -> {
                 return "Средние значения равны";
             }
-            default -> {
-                throw new RuntimeException("Ошибка в обработке");
-            }
+            default -> throw new RuntimeException("Ошибка в обработке");
         }
     }
 }

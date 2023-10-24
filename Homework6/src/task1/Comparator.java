@@ -5,10 +5,6 @@ import java.util.Arrays;
 
 public class Comparator {
 
-
-    public Comparator() {
-    }
-
     public double getAverage(int[] array) {
         return Arrays.stream(array).average().getAsDouble();
     }
